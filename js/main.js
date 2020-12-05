@@ -78,6 +78,7 @@ function methodCholesky (A, B) {
     }
     
     console.log(x);
+    console.log(vb);
 
     return vb;
 
