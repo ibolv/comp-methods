@@ -115,9 +115,9 @@ function leastSquareMethod(vectX, vectY) {
 
 }
 
-leastSquareMethod(vectX, vectY);
-console.log('Вектор X', vectX);
-console.log('Вектор Y', vectY);
+//leastSquareMethod(vectX, vectY);
+//console.log('Вектор X', vectX);
+//console.log('Вектор Y', vectY);
 //console.log(fi(vectX, vectY));
 //console.log('Многочлен Лагранжа',polynomialLagrange(vectX, vectY, 6));
 //console.log('Параболический сплайн',Splain(vectX, vectY, 0.91));

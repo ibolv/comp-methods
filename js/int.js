@@ -50,6 +50,6 @@ function Gauss(a, b) {
 }
 
 
-methodTrapec(a ,b);
-Gauss(a, b);
+//methodTrapec(a ,b);
+//Gauss(a, b);
 

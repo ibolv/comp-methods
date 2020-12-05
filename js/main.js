@@ -150,7 +150,7 @@ function methodsSeidel(A, B) {
 
 }
 
-var arr = methodCholesky(A, B);
+//var arr = methodCholesky(A, B);
 //console.log(A);
 
-console.log(methodsSeidel(A, B));
+//console.log(methodsSeidel(A, B));
