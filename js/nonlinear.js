@@ -1,14 +1,12 @@
 
-//var x0 = 1;
-var y0 = 2;
 
 var dx = 0.001;
-function f (x) {
-    return 2*x*x*x - y*y - 1;
+function f (x, y) {
+    return Math.exp(x*y) - x*x + y - 1.4;
 }
 
 function g (x, y) {
-    return x*y*y*y - y - 4;
+    return (x+0.5)*(x+0.5) + y*y - 1;
 }
 
 function fxr (x, y) {
@@ -42,19 +40,24 @@ function matrJacobs(x0, y0) {
 }
 
 function methodNewton() {
+    var x0 = 1;
+    var y0 = 2;
 
     var value = matrJacobs(x0, y0);
     while (parseFloat(value.x.toFixed(4)) != x1) {
         var x1 = parseFloat(value.x.toFixed(4));
-        value = matrJacobs(value.x,value.y);
-        console.log(value.x,value.y, x1);
-        
+        value = matrJacobs(value.x,value.y);        
     }
+    console.log('Метод Ньютона ',value.x,value.y);
 
 }
 
+function fiter(x) {
+    return Math.exp(-x) - (x - 1.16)*(x - 1.16);
+}
+
 function fi(x) {
-    return Math.log((x-1.16)*(x-1.16));
+    return -Math.log((x-1.16)*(x-1.16));
 }
 
 function methodIteration() {
@@ -77,5 +80,8 @@ function methodIteration() {
     
 }
 
-//methodNewton();
-console.log(methodIteration());
+methodNewton();
+console.log('Метод простых итераций ',methodIteration());
+
+console.log(fiter(0.2987568723869463));
+console.log(f(0.41856313514620774, 0.3952743131409402));
