@@ -59,29 +59,39 @@ function fiter(x) {
 function fi(x) {
     return -Math.log((x-1.16)*(x-1.16));
 }
+var n = 0;
 
-function methodIteration() {
+function Iter(x,x0) {
     //Точность
     var E = 0.0001;
-    var x = 0.1;
-    var x0 = 0;
     while(Math.abs(x - x0) > E) {
         x0 = x; 
         var x1 = fi(x0);
         var x2 = fi(x1);
         var d = x0 - 2 * x1 + x2;
         if (d!=0) {
-            x = (x0*x2-x1*x1)/d; 
+            x = (x0*x2-x1*x1)/d;
         } else {
             return x;
         }
     }
     return x;
+}
+function methodIteration(x, x0) {
+    var x = 0.5;
+    var x0 = 0;
+    var vectX = [];
+    for (var i = 0; i < 2; i++) {
+        vectX[i] = Iter(x,x0);
+        x++;
+    }
+    return vectX;
     
 }
 
-methodNewton();
-console.log('Метод простых итераций ',methodIteration());
+//methodNewton();
+//console.log('Метод простых итераций ',methodIteration());
 
-console.log(fiter(0.2987568723869463));
-console.log(f(0.41856313514620774, 0.3952743131409402));
+//console.log(fiter(-2.7027681931286147));
+//console.log(f(0.41856313514620774, 0.3952743131409402));
+//console.log(g(0.41856313514620774, 0.3952743131409402));
